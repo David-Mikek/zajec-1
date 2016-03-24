@@ -1,2 +1,0 @@
-# zajc
-jana pizdi e
