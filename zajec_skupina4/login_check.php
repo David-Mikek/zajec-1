@@ -24,6 +24,7 @@ if (!empty($email) && !empty($pass)) {
         //v sejo si shranimo podatke o uporabniku
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['name'] = $user['first_name'].' '.$user['last_name'];
+        $_SESSION['privlage'] = $user['privlage'];
         header("location: index.php");
         die(); //prekine delovanje te strani        
     }

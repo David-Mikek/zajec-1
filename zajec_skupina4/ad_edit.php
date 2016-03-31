@@ -12,10 +12,14 @@
     
     //če slučajno uporabnik ni lastni, ga preusmerim nazaj na 
     //seznam vseh oglasov
-    if (mysqli_num_rows($result) != 1) {
-        header("Location: ad_list.php");
-        die();
-    }
+    if($_SESSION['privlage']='normal')
+    {
+        if (mysqli_num_rows($result) != 1) 
+        {
+            header("Location: ad_list.php");
+            die();
+        }
+    }   
 
     //vse podatke o oglasu si shranim v spremenljivko $ad
     $ad = mysqli_fetch_array($result);

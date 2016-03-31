@@ -9,7 +9,7 @@
             $_SERVER['REQUEST_URI'] != '/zajec/login_check.php') {
         //neprijavljene uporabnike preusmerimo na prijavo
         //RAZEN, če niso na strani registracije ali prijave
-        header("location: login.php");
+        header("location: login.php");  
         die();
     }
 ?>
