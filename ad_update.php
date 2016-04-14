@@ -12,12 +12,12 @@
     $ad_id = (int) $_POST['id'];
     $enable_ad = $_POST['enable_ad'];
     $query = "INSERT INTO ads(enable_ad)
-                        VALUES ('$enable_ad')"; 
+                        VALUES ('$enable_ad');"; 
     
     $result = mysqli_query($link,$query);
     
     $array_enable = mysqli_fetch_array($result);
-    $_SESSION['enable_ad'] = $array_enable['enable_ad'];
+    $_SESSION['enable_ad'] = $enable_ad;
     
     $user_id = (int)$_SESSION['user_id'];
   

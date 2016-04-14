@@ -1,6 +1,7 @@
 <?php
     include_once 'header.php';
     include_once 'database.php';
+    include_once 'session.php';
     //id oglasa, ki ga bomo urejali
     $ad_id = (int) $_GET['id'];
     $user_id = $_SESSION['user_id'];

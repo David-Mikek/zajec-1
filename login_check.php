@@ -12,8 +12,9 @@ if (!empty($email) && !empty($pass)) {
     $pass = sha1($pass);
     $query = sprintf("SELECT * FROM users 
                         WHERE email='%s' AND pass = '%s'",
-            mysqli_real_escape_string($email),
-            mysqli_real_escape_string($pass));
+            mysqli_real_escape_string($link,$email),
+            mysqli_real_escape_string($link,$pass));
+    //echo $query; die();
     
     $result = mysqli_query($link,$query);
     //število vrstic mora biti enako 1
@@ -29,12 +30,13 @@ if (!empty($email) && !empty($pass)) {
         die(); //prekine delovanje te strani        
     }
     else {
-        header("location: login.php");
+        //echo mysqli_error($link);
+        header("location: login.php?e=1");
         die(); //prekine delovanje te strani
     }    
 }
 else {
-    header("location: login.php");
+    header("location: login.php?e=2");
     die(); //prekine delovanje te strani
 }
 ?>
