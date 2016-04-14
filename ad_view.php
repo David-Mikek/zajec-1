@@ -69,6 +69,8 @@ if($_SESSION['enable_ad'] == NULL)
         echo '<i>' . $ad['name'] . '</i><br />';
         echo $ad['date_b'] . ' - ' . $ad['date_e'];
         echo '<h3>' . $ad['price'] . '</h3>';
+		if ($SESSION[avkcija] == 1 )
+			echo'<a href= "auction.php">Pojdi na avkcijo</a> '
         echo '<p>' . $ad['description'] . '</p>';
 ?>
     </div>
@@ -102,6 +104,8 @@ if($_SESSION['enable_ad'] == NULL)
                 Izbriši</a>';
         }
         echo '</div>';
+		$_SESSION['naslov'] = $ad['title'];
+		$_SESSION['cena'] = $ad['price'];
     }
 ?>
     </div>

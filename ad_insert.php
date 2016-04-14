@@ -8,8 +8,13 @@
     $price = $_POST['price'];
     $category_id = (int)$_POST['category_id'];
     $description = $_POST['description'];
-    
+   
     $user_id = (int)$_SESSION['user_id'];
+	
+	//  shrani vrdenost v globalno spremenjivko
+		$vrsta = $_POST['avkcija'];
+		SESSION[avkcija]=$vrsta
+		
     //preverim, če so izpolnjeni obvezni atributi
     if (!empty($title) && !empty($date_b) 
             && !empty($date_e) && !empty($price)

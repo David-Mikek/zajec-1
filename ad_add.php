@@ -1,5 +1,6 @@
 <?php
     include_once 'header.php';
+	
 ?>
 <form action="ad_insert.php" method="post">
     <table border="0">
@@ -18,7 +19,12 @@
         <tr>
             <td>Cena:</td>
             <td><input type="number" name="price" required="required" /></td>
-        </tr>
+			</tr>
+		//	
+        <tr>
+	     <td><input type="radio" name="avkcija" value= 0 />Fiksna</td>
+	    	  <td><input type="radio" name="avkcija" value= 1 />Izklicna</td>
+         </tr>
         <tr>
             <td>Kategorija:</td>
             <td>
@@ -39,6 +45,7 @@
                 ?>
             </td>
         </tr>
+		
         <tr>
             <td>Opis:</td>
             <td><textarea name="description" cols="20" rows="8"></textarea></td>
