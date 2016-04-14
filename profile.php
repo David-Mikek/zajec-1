@@ -58,6 +58,8 @@ $user = mysqli_fetch_array($result);
     <input type="reset" name="reset" value="Prekliči" />
 </form>
 
+<a href="message.php"> Pošlji sporočilo <a>
+
 <?php
 include_once 'footer.php';
 ?>
