@@ -27,7 +27,7 @@
                 mysqli_real_escape_string($price),
                 mysqli_real_escape_string($description)
                 );
-                mysqli_query($link, $query);
+                mysqli_query($query);
                 $ad_id = mysqli_insert_id();
                 header("Location: ad_view.php?id=$ad_id");
     }

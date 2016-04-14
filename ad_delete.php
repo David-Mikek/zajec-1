@@ -11,7 +11,7 @@
     $sql = "DELETE FROM ads 
             WHERE id = $id AND user_id = $user_id";
     
-    mysqli_query($link,$sql);
+    mysqli_query($sql);
     
     header("Location: ad_list.php");
 ?>

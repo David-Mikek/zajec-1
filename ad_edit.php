@@ -8,7 +8,7 @@
     $sql = "SELECT * FROM ads 
             WHERE id=$ad_id AND user_id=$user_id";
     
-    $result = mysqli_query($link, $sql);
+    $result = mysqli_query($sql);
     
     //če slučajno uporabnik ni lastni, ga preusmerim nazaj na 
     //seznam vseh oglasov
@@ -31,8 +31,16 @@
     <input type="hidden" name="id" value="<?php echo $ad['id']; ?>" />
     <table border="0">
         <tr>
+            <td>Enable:</td>
+        </tr>    
+        <tr>
             <td>Naslov:</td>
-            <td><input type="text" name="title" value="<?php echo $ad['title']; ?>" required="required"  /></td>
+            <td>
+                <select name="enable_ad">
+                 <option value="enable">Enable</option>
+                 <option value="disable">Disable</option>
+                </select>
+            </td>
         </tr>
         <tr>
             <td>Datum začetka:</td>

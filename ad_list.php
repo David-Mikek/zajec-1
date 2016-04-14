@@ -9,7 +9,7 @@
             FROM ads a INNER JOIN categories c ON c.id=a.category_id
             WHERE a.date_e > '$curent_date'";
     
-    $result = mysqli_query($link,$sql);
+    $result = mysqli_query($sql);
     
     while ($row = mysqli_fetch_array($result)) {
         echo '<div class="oglas">';
@@ -17,7 +17,7 @@
         echo '<a href="ad_view.php?id='.$row['id'].'">';
         //preveri ali oglas ima sliko
         $slike = "SELECT * FROM pictures WHERE ad_id = ".$row['id'];
-        $r = mysqli_query($link,$slike);
+        $r = mysqli_query($slike);
         if (mysqli_num_rows($r) > 0) {
             //ima slike
             $slika = mysqli_fetch_array($r);

@@ -9,7 +9,7 @@
                           VALUES ('%s')",
                 mysqli_real_escape_string($name)
                 );
-                mysqli_query($link,$query);
+                mysqli_query($query);
                 header("Location: categories_list.php");
     }
     else {

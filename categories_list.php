@@ -8,7 +8,7 @@
     $sql = "SELECT * 
             FROM categories c";
     
-    $result = mysqli_query($link,$sql);
+    $result = mysqli_query($sql);
     
     while ($row = mysqli_fetch_array($result)) {
         echo "<p>";

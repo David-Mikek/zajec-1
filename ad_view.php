@@ -11,18 +11,22 @@ $query = "SELECT a.title, a.date_b, a.date_e,
                 ON a.category_id=c.id
               WHERE a.id = $ad_id";
 //pošljem podatke v bazo
-$result = mysqli_query($link,$query);
+$result = mysqli_query($query);
 //premenim rezultat v "berljivo" obliko
 $ad = mysqli_fetch_array($result);
 ?>
 
-<div id="ad">
+if($_SESSION['enable_ad'] != 'disable')
+{
+  //tuki gre spodnja koda tako da bo add viden samo tedaj ko ni disablan, to je ko je izbrano v tabeli pod enable_ad 
+  
+  <div id="ad">
     <div id="ad_pictures">
         <?php
         //prebrat vse slike, vezane na ta oglas
         $query = "SELECT * FROM pictures
                 WHERE ad_id = $ad_id";
-        $result = mysqli_query($link,$query);
+        $result = mysqli_query($query);
         //preverim, če ima oglas sploh, kakšno sliko
         if (mysqli_num_rows($result) == 0) {
             //izrišem sliko "ni slike"
@@ -83,7 +87,7 @@ $ad = mysqli_fetch_array($result);
               ON c.user_id = u.id
               WHERE c.ad_id = $ad_id
               ORDER BY c.date_c DESC";
-    $result = mysqli_query($link,$query);
+    $result = mysqli_query($query);
     
     while ($row = mysqli_fetch_array($result)) {
         echo '<div class="comment">';
@@ -101,6 +105,7 @@ $ad = mysqli_fetch_array($result);
 ?>
     </div>
 </div>
+}
 
 <?php
 //preverim, če je oglas od trenutno prijavljenega
