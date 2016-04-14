@@ -15,7 +15,7 @@ if (!empty($email) && !empty($pass)) {
             mysqli_real_escape_string($email),
             mysqli_real_escape_string($pass));
     
-    $result = mysqli_query($query);
+    $result = mysqli_query($link,$query);
     //število vrstic mora biti enako 1
     if (mysqli_num_rows($result) == 1) {
         //vse je ok - podatki so ustrezni

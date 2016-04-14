@@ -11,7 +11,7 @@ $query = "SELECT a.title, a.date_b, a.date_e,
                 ON a.category_id=c.id
               WHERE a.id = $ad_id";
 //pošljem podatke v bazo
-$result = mysqli_query($query);
+$result = mysqli_query($link,$query);
 //premenim rezultat v "berljivo" obliko
 $ad = mysqli_fetch_array($result);
 ?>
@@ -26,7 +26,7 @@ if($_SESSION['enable_ad'] != 'disable')
         //prebrat vse slike, vezane na ta oglas
         $query = "SELECT * FROM pictures
                 WHERE ad_id = $ad_id";
-        $result = mysqli_query($query);
+        $result = mysqli_query($link,$query);
         //preverim, če ima oglas sploh, kakšno sliko
         if (mysqli_num_rows($result) == 0) {
             //izrišem sliko "ni slike"
@@ -87,7 +87,7 @@ if($_SESSION['enable_ad'] != 'disable')
               ON c.user_id = u.id
               WHERE c.ad_id = $ad_id
               ORDER BY c.date_c DESC";
-    $result = mysqli_query($query);
+    $result = mysqli_query($link,$query);
     
     while ($row = mysqli_fetch_array($result)) {
         echo '<div class="comment">';

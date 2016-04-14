@@ -6,11 +6,11 @@
     //pred brisanjem kategorije moramo preveriti, 
     //da so prazne tudi oglasov
     $query = "SELECT * FROM ads WHERE category_id = $id";
-    $result = mysqli_query($query);    
+    $result = mysqli_query($link,$query);    
     if (mysqli_num_rows($result) == 0) {    
         $sql = "DELETE FROM categories 
                 WHERE id = $id";
-        mysqli_query($sql);
+        mysqli_query($link,$sql);
     }
     header("Location: categories_list.php");
 ?>

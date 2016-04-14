@@ -11,10 +11,10 @@
         WHERE c.id = $id AND
         ((c.user_id = $user_id) OR 
         (a.user_id = $user_id))";
-    $result = mysqli_query($query);    
+    $result = mysqli_query($link,$query);    
     //če ima pravice
     if (mysqli_num_rows($result) > 0) {
-        mysqli_query("DELETE FROM comments WHERE id= $id");
+        mysqli_query($link,"DELETE FROM comments WHERE id= $id");
     }
     header("Location: ad_view.php?id=$ad_id");
 ?>

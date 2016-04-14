@@ -6,7 +6,7 @@
     $user_id = $_SESSION['user_id'];
     
     //preverim, če je oglas od prijavljenega uporabnika
-    $result = mysqli_query("SELECT * FROM ads WHERE id=$ad_id
+    $result = mysqli_query($link,"SELECT * FROM ads WHERE id=$ad_id
                             AND user_id = $user_id");
     if (mysqli_num_rows($result) == 0) {
         $_SESSION['notice'] = 'TO NI TVOJ OGLAS!!!';
@@ -28,7 +28,7 @@
         move_uploaded_file($_FILES['file']['tmp_name'],
                 $new_name);
         //zapisat sliko v bazo!
-        mysqli_query("INSERT INTO pictures (ad_id, url)
+        mysqli_query($link,"INSERT INTO pictures (ad_id, url)
                      VALUES ($ad_id, '$new_name')");
         
         $_SESSION['notice'] = "Uspešno ste dodali sliko!";

@@ -10,11 +10,11 @@ $query = "SELECT * FROM pictures p
           INNER JOIN ads a ON a.id=p.ad_id
           WHERE p.id = $picture_id AND 
           a.user_id = ".$_SESSION['user_id'];
-$result = mysqli_query($query);
+$result = mysqli_query($link,$query);
 
 if (mysqli_num_rows($result) > 0) {
     //to je njegova slika
-    mysqli_query("DELETE FROM pictures WHERE id = $picture_id");
+    mysqli_query($link,"DELETE FROM pictures WHERE id = $picture_id");
     header("Location: ad_view.php?id=$ad_id");
 }
 

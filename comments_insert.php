@@ -15,7 +15,7 @@
                       VALUES ($ad_id, $user_id, '$comment',NOW())";*/
     //echo $query; die();
     
-    mysqli_query($query);
+    mysqli_query($link,$query);
     
     //preusmerimo nazaj na oglas
     header("Location: ad_view.php?id=$ad_id");

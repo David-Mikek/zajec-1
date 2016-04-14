@@ -25,7 +25,7 @@
                 <?php 
                 include_once 'database.php';
                 
-                $categories = mysqli_query(
+                $categories = mysqli_query($link,
                         "SELECT * 
                          FROM categories");
                 echo '<select name="category_id">';

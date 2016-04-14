@@ -38,7 +38,7 @@
                 mysqli_real_escape_string($description),
                 mysqli_real_escape_string($price));
         
-        mysqli_query($sql);
+        mysqli_query($link,$sql);
         
         header("Location: ad_view.php?id=".$ad_id);
         die();
