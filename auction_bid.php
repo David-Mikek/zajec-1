@@ -7,10 +7,11 @@ $cena = $_SESSION['cena'];
 $sestevanec = $_POST['visjacena'];
 $cena = $cena + $sestevanec;
 
-//ni še fjertik
-//cena mora updatati
+$query = "UPDATE ads SET price = $cena "
+mysqli_query($link,$query);
 
-
+//dobro bi bilo,če bi na auction.php izpisalo najvišjega ponudnika
+$ponudnik = $_SESSION['name'];
 ?>
 
 
