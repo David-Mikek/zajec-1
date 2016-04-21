@@ -6,7 +6,12 @@
 	$cena = $_SESSION['cena'];
 	
 	  echo '<h3>' . $naslov . '</h3>';
+	  echo '<h4>' . $cena . '</h4>';
+		// avkcija se mora končati ,shraniti mora ponudnika in mu morda poslati soročilo
 		
+		
+		// to bo za čas,najbrž še nuca fixanje
+		if ($_SESSION['date']= date("Y/m/d") )
 ?>
 
 <form action = "auction_bid.php" method = "post">
