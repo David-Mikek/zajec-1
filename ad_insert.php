@@ -11,9 +11,11 @@
    
     $user_id = (int)$_SESSION['user_id'];
 	
+	$_SESSION['date'] = $date_e;
+	
 	//  shrani vrdenost v globalno spremenjivko
 		$vrsta = $_POST['avkcija'];
-		SESSION[avkcija]=$vrsta
+		$_SESSION[avkcija]=$vrsta;
 		
     //preverim, če so izpolnjeni obvezni atributi
     if (!empty($title) && !empty($date_b) 

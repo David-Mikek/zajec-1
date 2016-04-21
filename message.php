@@ -31,29 +31,35 @@ if($_POST["submit"]) {
 
 <body>
 
-    <?=$thankYou ?>
+    <?php $thankYou ?>
 
     <form method="post" action="message.php">
         <label>Ime:</label>
         <input name="sender">
-
+<br>
         <label>Vaš Email:</label>
         <input name="senderEmail">
-
+<br>
 		<label>Prejemnikov Email:</label>
         <input name="recieverEmail">
+		
+		<br>
 		
 		<label>Zadeva:</label>
         <input name="subject">
 		
+		<br>
+		
         <label>Sporočilo:</label>
         <textarea rows="5" cols="20" name="message"></textarea>
+		<br>
 		
-	//obrazec pošlje podatke na isto stran,oziroma v php nad doctypu	
+	
 
         <input type="submit" name="submit">
+		
     </form>
-
+//obrazec pošlje podatke na isto stran,oziroma v php nad doctypu	
 </body>
 
 </html>

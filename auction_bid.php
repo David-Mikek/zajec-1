@@ -10,7 +10,7 @@ $cena = $cena + $sestevanec;
 $query = "UPDATE ads SET price = $cena "
 mysqli_query($link,$query);
 
-//dobro bi bilo,če bi na auction.php izpisalo najvišjega ponudnika
+//lepo bi bilo,če bi na auction.php izpisalo najvišjega ponudnika (ne v metih)
 $ponudnik = $_SESSION['name'];
 ?>
 
